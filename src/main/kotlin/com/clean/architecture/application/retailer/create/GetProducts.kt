@@ -1,4 +1,4 @@
-package com.clean.architecture.application.retailer
+package com.clean.architecture.application.retailer.create
 
 import com.clean.architecture.domain.model.retailer.Product
 

@@ -1,6 +1,6 @@
 package com.clean.architecture.port.adapter.communication
 
-import com.clean.architecture.application.retailer.GetProducts
+import com.clean.architecture.application.retailer.create.GetProducts
 import com.clean.architecture.domain.model.retailer.Product
 
 class GetProductsFromService : GetProducts {

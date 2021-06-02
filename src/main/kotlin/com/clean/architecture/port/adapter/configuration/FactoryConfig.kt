@@ -1,6 +1,10 @@
 package com.clean.architecture.port.adapter.configuration
 
-import com.clean.architecture.application.retailer.*
+import com.clean.architecture.application.retailer.RetailerRepository
+import com.clean.architecture.application.retailer.create.CreateRetailer
+import com.clean.architecture.application.retailer.create.GetProducts
+import com.clean.architecture.application.retailer.create.SendPartnerInfo
+import com.clean.architecture.application.retailer.find.FindRetailer
 import com.clean.architecture.port.adapter.communication.GetProductsFromService
 import com.clean.architecture.port.adapter.file.operations.GetProductsFromFile
 import com.clean.architecture.port.adapter.file.operations.GetProductsFromS3
@@ -19,14 +23,11 @@ class FactoryConfig(@Value("\${products.source}") private val productsSource: St
     @Bean
     fun getCreateRetailer(repository: RetailerRepository,
                           getProducts: GetProducts,
-                          informPartners: InformPartners) =
-        CreateRetailer(repository, getProducts, informPartners)
+                          sendPartnerInfo: SendPartnerInfo) =
+            CreateRetailer(repository, getProducts, sendPartnerInfo)
 
     @Bean
     fun getFindRetailer(repository: RetailerRepository) = FindRetailer(repository)
-
-    @Bean
-    fun getInformPartners() = InformAllPartners()
 
     @Bean
     fun getProducts(): GetProducts {

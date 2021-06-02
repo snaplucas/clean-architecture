@@ -1,5 +1,6 @@
-package com.clean.architecture.application.retailer
+package com.clean.architecture.application.retailer.find
 
+import com.clean.architecture.application.retailer.RetailerRepository
 import com.clean.architecture.domain.model.retailer.Product
 import com.clean.architecture.domain.model.retailer.Retailer
 
