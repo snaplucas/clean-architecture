@@ -4,5 +4,5 @@ import com.clean.architecture.domain.model.retailer.Product
 
 interface GetProducts {
 
-    fun execute(retailerId: Long): List<Product>
+    fun execute(retailerName: String): List<Product>
 }
