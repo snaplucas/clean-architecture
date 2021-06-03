@@ -28,6 +28,10 @@ dependencies {
 	implementation("com.h2database:h2:1.4.199")
 	implementation("io.springfox:springfox-swagger2:2.8.0")
 	implementation("io.springfox:springfox-swagger-ui:2.8.0")
+	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+	implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.9.8")
+	implementation("io.github.openfeign:feign-jackson:10.1.0")
+
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
