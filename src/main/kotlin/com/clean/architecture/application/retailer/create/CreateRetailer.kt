@@ -11,12 +11,9 @@ class CreateRetailer(private val repository: RetailerRepository,
         val products = getProducts.execute(retailer.name)
         val newRetailer = retailer.copy(products = products)
 
-        try {
-            repository.save(newRetailer)
-            sendPartnerInfo.execute("some_partner", "Sucess!")
-            return newRetailer
-        } catch (e: Exception) {
-            throw Exception("")
-        }
+        repository.save(newRetailer)
+        sendPartnerInfo.execute("some_partner", "Sucess!")
+
+        return newRetailer
     }
 }

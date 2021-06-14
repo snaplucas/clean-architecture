@@ -1,5 +1,6 @@
 package com.clean.architecture.port.adapter.configuration
 
+import com.clean.architecture.application.purchase.FindPurchaseInfo
 import com.clean.architecture.application.retailer.RetailerRepository
 import com.clean.architecture.application.retailer.create.CreateRetailer
 import com.clean.architecture.application.retailer.create.GetProducts
@@ -28,6 +29,9 @@ class FactoryConfig(@Value("\${products.source}") private val productsSource: St
 
     @Bean
     fun getFindRetailer(repository: RetailerRepository) = FindRetailer(repository)
+
+    @Bean
+    fun getFindPurchase() = FindPurchaseInfo()
 
     @Bean
     fun getProducts(): GetProducts {
