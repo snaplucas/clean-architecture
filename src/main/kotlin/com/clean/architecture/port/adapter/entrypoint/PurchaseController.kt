@@ -11,5 +11,5 @@ import org.springframework.web.bind.annotation.RestController
 class PurchaseController(private val findPurchase: FindPurchase) {
 
     @GetMapping("/{orderId}")
-    suspend fun coroutines(@PathVariable orderId: String) = findPurchase.execute(orderId)
+    suspend fun getByOrderId(@PathVariable orderId: String) = findPurchase.execute(orderId)
 }
